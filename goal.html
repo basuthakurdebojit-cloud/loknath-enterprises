@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LOKNATH ENTERPRISES</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f4f7fb;
+  color:#222;
+  overflow-x:hidden;
+}
+
+:root{
+  --primary:#0f172a;
+  --secondary:#2563eb;
+  --light:#ffffff;
+  --text:#475569;
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+  --radius:24px;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  backdrop-filter:blur(12px);
+  background:rgba(15,23,42,0.85);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav{
+  max-width:1300px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 25px;
+}
+
+.logo{
+  color:white;
+  font-size:28px;
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#60a5fa;
+}
+
+.hero{
+  min-height:100vh;
+  background:
+  linear-gradient(rgba(15,23,42,0.75),rgba(15,23,42,0.82)),
+  url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  padding:120px 20px 80px;
+  color:white;
+}
+
+.hero-content{
+  max-width:850px;
+  animation:fadeUp 1s ease;
+}
+
+.hero h1{
+  font-size:68px;
+  line-height:1.1;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:20px;
+  line-height:1.8;
+  color:#e2e8f0;
+  margin-bottom:35px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 32px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+  display:inline-block;
+}
+
+.btn-primary{
+  background:#2563eb;
+  color:white;
+  box-shadow:0 8px 20px rgba(37,99,235,0.4);
+}
+
+.btn-primary:hover{
+  transform:translateY(-5px);
+}
+
+.btn-secondary{
+  background:white;
+  color:#0f172a;
+}
+
+.btn-secondary:hover{
+  transform:translateY(-5px);
+}
+
+section{
+  padding:100px 20px;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:46px;
+  margin-bottom:12px;
+  color:#0f172a;
+}
+
+.section-title p{
+  color:#64748b;
+  font-size:18px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  padding:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.4s;
+  overflow:hidden;
+  position:relative;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:rgba(37,99,235,0.08);
+  border-radius:50%;
+  top:-40px;
+  right:-40px;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card h3{
+  margin-bottom:15px;
+  color:#0f172a;
+  font-size:24px;
+}
+
+.card p{
+  color:#64748b;
+  line-height:1.8;
+}
+
+.upload-box{
+  background:white;
+  border-radius:30px;
+  padding:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom:50px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:16px;
+  border-radius:14px;
+  border:1px solid #dbeafe;
+  margin-top:15px;
+  margin-bottom:20px;
+  font-size:16px;
+  font-family:'Poppins',sans-serif;
+  background:#f8fbff;
+}
+
+button{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:15px 28px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#1d4ed8;
+  transform:translateY(-3px);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.gallery-card{
+  background:white;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.gallery-card:hover{
+  transform:translateY(-10px);
+}
+
+.square-media{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:#dbeafe;
+}
+
+.square-media img,
+.square-media video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-content{
+  padding:25px;
+}
+
+#priceTable{
+  width:100%;
+  border-collapse:collapse;
+  min-width:700px;
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+#priceTable th{
+  background:#2563eb;
+  color:white;
+  padding:18px;
+  border:1px solid #dbeafe;
+}
+
+#priceTable td{
+  padding:16px;
+  border:1px solid #dbeafe;
+  text-align:center;
+  background:white;
+}
+
+.contact-box{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:white;
+  border-radius:30px;
+  padding:50px;
+  text-align:center;
+}
+
+.contact-box h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.contact-box p{
+  color:#dbeafe;
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  border:none;
+  border-radius:25px;
+  margin-top:30px;
+}
+
+footer{
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:35px 20px;
+}
+
+.sticky-whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#22c55e;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  font-size:28px;
+  z-index:999;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:45px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+LOKNATH ENTERPRISES
+</div>
+
+<div class="nav-links">
+
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#pricing">Pricing</a>
+<a href="#feedback">Feedback</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Modern Waterproofing Solutions
+</h1>
+
+<p>
+Professional waterproofing, damp repair, crack repair and roof leakage solutions in Kolkata.
+</p>
+
+<div class="hero-buttons">
+
+<a href="tel:8910033430"
+class="btn btn-primary">
+
+📞 Free Inspection
+
+</a>
+
+<a href="https://wa.me/918910033430"
+class="btn btn-secondary">
+
+💬 WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our Services</h2>
+
+<p>
+Professional repair and waterproofing services.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Roof Waterproofing</h3>
+
+<p>
+Complete waterproof coating and leakage prevention.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Crack Repair</h3>
+
+<p>
+Professional wall and roof crack treatment.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Wall Damp Repair</h3>
+
+<p>
+Permanent damp and moisture repairing solutions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our Work Gallery</h2>
+
+<p>
+Upload square photos and videos anytime.
+</p>
+
+</div>
+
+<div class="upload-box">
+
+<h3 style="margin-bottom:20px;">
+Upload Work Photos & Videos
+</h3>
+
+<input type="file"
+id="workPhotos"
+accept="image/*"
+multiple>
+
+<input type="file"
+id="workVideos"
+accept="video/*"
+multiple>
+
+<button onclick="uploadWorks()">
+Upload To Gallery
+</button>
+
+</div>
+
+<div id="galleryContainer"
+class="gallery-grid">
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Editable Price Chart</h2>
+
+<p>
+Unlimited editable rows and columns.
+</p>
+
+</div>
+
+<div class="upload-box">
+
+<div style="
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:25px;
+">
+
+<button onclick="addRow()">
+➕ Add Row
+</button>
+
+<button onclick="addColumn()">
+➕ Add Column
+</button>
+
+<button onclick="saveTable()">
+💾 Save Table
+</button>
+
+</div>
+
+<div style="overflow:auto;">
+
+<table id="priceTable">
+
+<thead>
+
+<tr>
+
+<th contenteditable="true">
+Service
+</th>
+
+<th contenteditable="true">
+Area
+</th>
+
+<th contenteditable="true">
+Price
+</th>
+
+<th contenteditable="true">
+Warranty
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+<tr>
+
+<td contenteditable="true">
+Roof Waterproofing
+</td>
+
+<td contenteditable="true">
+500 sq.ft
+</td>
+
+<td contenteditable="true">
+₹12,000
+</td>
+
+<td contenteditable="true">
+5 Years
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="feedback">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Customer Feedback</h2>
+
+<p>
+Customers can give ratings and reviews here.
+</p>
+
+</div>
+
+<div class="upload-box">
+
+<h3 style="margin-bottom:25px;">
+Give Your Feedback
+</h3>
+
+<input type="text"
+id="customerName"
+placeholder="Your Name">
+
+<select id="customerRating">
+
+<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+<option value="4">⭐⭐⭐⭐ Very Good</option>
+<option value="3">⭐⭐⭐ Good</option>
+<option value="2">⭐⭐ Average</option>
+<option value="1">⭐ Poor</option>
+
+</select>
+
+<textarea id="customerReview"
+rows="5"
+placeholder="Write your feedback here...">
+</textarea>
+
+<button onclick="submitFeedback()">
+
+Submit Feedback
+
+</button>
+
+</div>
+
+<div id="feedbackContainer"
+class="grid">
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+Excellent waterproofing service and professional team.
+</p>
+
+<small>
+- Rahul Sharma
+</small>
+
+</div>
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+Affordable pricing and fast work completion.
+</p>
+
+<small>
+- Amit Das
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="booking">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Book A Service</h2>
+
+<p>
+Send your service request through WhatsApp.
+</p>
+
+</div>
+
+<div class="upload-box">
+
+<form onsubmit="sendToWhatsApp(event)">
+
+<input id="name"
+type="text"
+placeholder="Your Name"
+required>
+
+<input id="phone"
+type="tel"
+placeholder="Phone Number"
+required>
+
+<input id="location"
+type="text"
+placeholder="Your Location"
+required>
+
+<select id="service">
+
+<option>
+Roof Waterproofing
+</option>
+
+<option>
+Crack Repair
+</option>
+
+<option>
+Wall Damp Repair
+</option>
+
+</select>
+
+<textarea id="message"
+rows="5"
+placeholder="Describe your problem">
+</textarea>
+
+<button type="submit">
+
+Submit Booking
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Contact Us</h2>
+
+<p>
+📍 Batangar, Shantipally, Maheshtala, Kolkata - 700140
+</p>
+
+<p>
+📞 +91 8910033430 / +91 6291867809
+</p>
+
+<iframe
+src="https://maps.google.com/maps?q=Batangar%20Maheshtala%20Kolkata&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 LOKNATH ENTERPRISES
+</p>
+
+</footer>
+
+<a href="https://wa.me/918910033430"
+class="sticky-whatsapp">
+
+💬
+
+</a>
+
+<script>
+
+/* LOAD SAVED DATA */
+
+window.addEventListener('load', function(){
+
+const savedGallery =
+localStorage.getItem('loknathGallery');
+
+if(savedGallery){
+
+document.getElementById(
+'galleryContainer'
+).innerHTML = savedGallery;
+
+}
+
+const savedTable =
+localStorage.getItem('loknathPriceTable');
+
+if(savedTable){
+
+document.getElementById(
+'priceTable'
+).innerHTML = savedTable;
+
+}
+
+const savedFeedback =
+localStorage.getItem('loknathFeedback');
+
+if(savedFeedback){
+
+document.getElementById(
+'feedbackContainer'
+).innerHTML = savedFeedback;
+
+}
+
+});
+
+/* GALLERY */
+
+function uploadWorks(){
+
+const photoFiles =
+document.getElementById('workPhotos').files;
+
+const videoFiles =
+document.getElementById('workVideos').files;
+
+const gallery =
+document.getElementById('galleryContainer');
+
+const totalFiles =
+photoFiles.length + videoFiles.length;
+
+let processed = 0;
+
+if(totalFiles === 0){
+
+alert("Please upload files.");
+return;
+
+}
+
+function saveGallery(){
+
+localStorage.setItem(
+'loknathGallery',
+gallery.innerHTML
+);
+
+alert("Gallery Updated!");
+
+}
+
+const currentDate =
+new Date().toLocaleDateString();
+
+for(let i=0; i<photoFiles.length; i++){
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+const card = `
+
+<div class="gallery-card">
+
+<div class="square-media">
+
+<img src="${e.target.result}">
+
+</div>
+
+<div class="gallery-content">
+
+<h3>Completed Project</h3>
+
+<p>
+Waterproofing & Repair Work
+</p>
+
+<small>
+Uploaded on ${currentDate}
+</small>
+
+</div>
+
+</div>
+
+`;
+
+gallery.innerHTML += card;
+
+processed++;
+
+if(processed === totalFiles){
+
+saveGallery();
+
+}
+
+};
+
+reader.readAsDataURL(photoFiles[i]);
+
+}
+
+for(let i=0; i<videoFiles.length; i++){
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+const card = `
+
+<div class="gallery-card">
+
+<div class="square-media">
+
+<video controls>
+
+<source src="${e.target.result}">
+
+</video>
+
+</div>
+
+<div class="gallery-content">
+
+<h3>Work Video</h3>
+
+<p>
+Live Waterproofing Project
+</p>
+
+<small>
+Uploaded on ${currentDate}
+</small>
+
+</div>
+
+</div>
+
+`;
+
+gallery.innerHTML += card;
+
+processed++;
+
+if(processed === totalFiles){
+
+saveGallery();
+
+}
+
+};
+
+reader.readAsDataURL(videoFiles[i]);
+
+}
+
+}
+
+/* PRICE TABLE */
+
+function addRow(){
+
+const table =
+document.getElementById('priceTable');
+
+const columnCount =
+table.rows[0].cells.length;
+
+const row =
+document.createElement('tr');
+
+for(let i=0; i<columnCount; i++){
+
+const cell =
+document.createElement('td');
+
+cell.contentEditable = "true";
+
+cell.innerHTML = "Edit";
+
+row.appendChild(cell);
+
+}
+
+document.getElementById(
+'tableBody'
+).appendChild(row);
+
+}
+
+function addColumn(){
+
+const table =
+document.getElementById('priceTable');
+
+const rows =
+table.rows;
+
+for(let i=0; i<rows.length; i++){
+
+const cell =
+document.createElement(
+i === 0 ? 'th' : 'td'
+);
+
+cell.contentEditable = "true";
+
+cell.innerHTML =
+i === 0
+? "New Column"
+: "Edit";
+
+rows[i].appendChild(cell);
+
+}
+
+}
+
+function saveTable(){
+
+localStorage.setItem(
+'loknathPriceTable',
+document.getElementById(
+'priceTable'
+).innerHTML
+);
+
+alert("Price Table Saved!");
+
+}
+
+/* FEEDBACK */
+
+function submitFeedback(){
+
+const name =
+document.getElementById(
+'customerName'
+).value;
+
+const rating =
+document.getElementById(
+'customerRating'
+).value;
+
+const review =
+document.getElementById(
+'customerReview'
+).value;
+
+if(name === "" || review === ""){
+
+alert("Please fill all fields.");
+return;
+
+}
+
+let stars = "";
+
+for(let i = 0; i < rating; i++){
+
+stars += "⭐";
+
+}
+
+const currentDate =
+new Date().toLocaleDateString();
+
+const feedbackCard = `
+
+<div class="card">
+
+<h3>${stars}</h3>
+
+<p>
+${review}
+</p>
+
+<small>
+- ${name}
+</small>
+
+<br><br>
+
+<small>
+${currentDate}
+</small>
+
+</div>
+
+`;
+
+const container =
+document.getElementById(
+'feedbackContainer'
+);
+
+container.innerHTML =
+feedbackCard + container.innerHTML;
+
+localStorage.setItem(
+'loknathFeedback',
+container.innerHTML
+);
+
+document.getElementById(
+'customerName'
+).value = "";
+
+document.getElementById(
+'customerReview'
+).value = "";
+
+document.getElementById(
+'customerRating'
+).value = "5";
+
+alert("Thank you for your feedback!");
+
+}
+
+/* WHATSAPP BOOKING */
+
+function sendToWhatsApp(event){
+
+event.preventDefault();
+
+const name =
+document.getElementById('name').value;
+
+const phone =
+document.getElementById('phone').value;
+
+const location =
+document.getElementById('location').value;
+
+const service =
+document.getElementById('service').value;
+
+const message =
+document.getElementById('message').value;
+
+const text =
+"New Booking Request:%0A" +
+"Name: " + name + "%0A" +
+"Phone: " + phone + "%0A" +
+"Location: " + location + "%0A" +
+"Service: " + service + "%0A" +
+"Problem: " + message;
+
+window.open(
+"https://wa.me/918910033430?text=" + text,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
